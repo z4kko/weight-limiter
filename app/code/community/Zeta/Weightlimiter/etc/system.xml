@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <tabs>
+        <zeta_weightlimiter module="zeta_weightlimiter" translate="label">
+            <label>Weight Limiter</label>
+        </zeta_weightlimiter>
+    </tabs>
+    <sections>
+        <config_weight translate="label">
+            <label>Configuration</label>
+            <tab>zeta_weightlimiter</tab>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+            <groups>
+                <minimum_weight translate="label,comment">
+                    <label>Configure Weightlimiter</label>
+                    <comment>That module stops customer before checkout if their quote does not weight enough.</comment>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <enabled translate="label">
+                            <label>Enabled</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <sort_order>0</sort_order>
+                        </enabled>
+                        <weight translate="label">
+                            <label>Minimum weight</label>
+                            <frontend_type>text</frontend_type>
+                            <validate>validate-not-negative-number</validate>
+                            <can_be_empty>0</can_be_empty>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <sort_order>1</sort_order>
+                            <depends>
+                                <enabled>1</enabled>
+                            </depends>
+                        </weight>
+                    </fields>
+                </minimum_weight>
+            </groups>
+        </config_weight>
+    </sections>
+</config>
